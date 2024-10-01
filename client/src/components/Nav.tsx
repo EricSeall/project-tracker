@@ -1,10 +1,4 @@
-import {
-	Button,
-	Link,
-	Navbar,
-	NavbarContent,
-	NavbarItem,
-} from "@nextui-org/react";
+import { Button, Navbar, NavbarContent } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import DarkIcon from "./icons/DarkIcon";

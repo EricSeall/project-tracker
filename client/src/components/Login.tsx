@@ -1,14 +1,7 @@
 import { Button, Link } from "@nextui-org/react";
 import DiscordIcon from "./icons/DiscordIcon";
 
-interface Props {
-	darkMode: boolean;
-	toggleDarkMode: Function;
-}
-
-export default function Login(props: Props) {
-	const { darkMode } = props;
-
+export default function Login() {
 	return (
 		<div className="flex flex-col h-screen items-center justify-center gap-16">
 			<h1 className="block font-semibold text-3xl">Ace Aura's Project Tracker</h1>

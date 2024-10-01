@@ -19,10 +19,7 @@ function App() {
 		<BrowserRouter>
 			<div className={`app${darkMode ? " dark" : ""} bg-background`}>
 				<Routes>
-					<Route
-						path="/"
-						element={<Login darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
-					/>
+					<Route path="/" element={<Login />} />
 					<Route
 						path="/projects"
 						element={
@@ -47,10 +44,7 @@ function App() {
 							</PrivateRoute>
 						}
 					/>
-					<Route
-						path="*"
-						element={<NotFound darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
-					/>
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 		</BrowserRouter>

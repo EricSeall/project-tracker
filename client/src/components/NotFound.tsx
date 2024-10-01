@@ -1,11 +1,4 @@
-interface Props {
-	darkMode: boolean;
-	toggleDarkMode: Function;
-}
-
-export default function NotFound(props: Props) {
-	const { darkMode } = props;
-
+export default function NotFound() {
 	return (
 		<div className="flex flex-col justify-center items-center h-screen p-8">
 			<h1 className="text-2xl">

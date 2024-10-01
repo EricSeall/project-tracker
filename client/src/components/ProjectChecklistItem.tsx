@@ -43,7 +43,7 @@ export default function ProjectChecklistItem(props: Props) {
 			<Button
 				className="bg-transparent"
 				size="sm"
-				onPress={(e) => handleDeleteItem(item._id)}
+				onPress={() => handleDeleteItem(item._id)}
 				isIconOnly
 			>
 				<DeleteIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />

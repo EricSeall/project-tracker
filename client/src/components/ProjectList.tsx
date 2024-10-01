@@ -90,7 +90,7 @@ export default function ProjectList(props: Props) {
 	}
 
 	// i have no clue why this error is happening or how to fix it...
-	const sortedProjects: Project[] = getSortedProjects();
+	const sortedProjects: any = getSortedProjects();
 
 	//console.log(projects);
 	return (
