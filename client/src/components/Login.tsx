@@ -10,7 +10,7 @@ export default function Login() {
 				as={Link}
 				size="lg"
 				className="w-fit"
-				href="https://discord.com/oauth2/authorize?client_id=1285284725241413643&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=identify+email"
+				href="https://discord.com/oauth2/authorize?client_id=1285284725241413643&response_type=code&redirect_uri=https%3A%2F%2Fproject-tracker-server-l2fs.onrender.com%2Fapi%2Fauth%2Fdiscord%2Fredirect&scope=identify+email"
 			>
 				Sign in with Discord
 			</Button>
