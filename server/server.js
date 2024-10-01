@@ -3,8 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const projectRoutes = require("./routes/projectRoutes");
+const authRoutes = require("./routes/authRoutes");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
-// create express app
 const app = express();
 
 // connect to db and listen to requests
@@ -23,7 +25,12 @@ app.use((req, res, next) => {
 	next();
 });
 
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cookieParser());
 app.use(express.json());
+app.use(express.text());
 
-// add routes here
-app.use("/projects", projectRoutes);
+// discord auth
+app.use("/api/auth", authRoutes);
+
+app.use("/api/projects", projectRoutes);

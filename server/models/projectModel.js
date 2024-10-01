@@ -2,8 +2,19 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+const listItemSchema = new Schema(
+	{
+		content: String,
+		isCompleted: Boolean,
+	},
+	{ timestamps: true }
+);
+
 const projectSchema = new Schema(
 	{
+		// discord id of user that owns project
+		ownerId: String,
+
 		// project wip name
 		title: {
 			type: String,
@@ -25,13 +36,7 @@ const projectSchema = new Schema(
 		description: String,
 
 		// array of to-dos for project
-		checklist: [
-			{
-				content: String,
-				completed: Boolean,
-				stage: String,
-			},
-		],
+		checklist: [listItemSchema],
 	},
 	{ timestamps: true }
 );
