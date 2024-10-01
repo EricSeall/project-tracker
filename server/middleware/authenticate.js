@@ -6,7 +6,10 @@ module.exports = async (req, res, next) => {
 	const token = req.cookies.token;
 	const refresh_token = req.cookies.refresh_token;
 
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+	res.setHeader(
+		"Access-Control-Allow-Origin",
+		"https://project-tracker-client-bqe9.onrender.com"
+	);
 	try {
 		const { sub } = await verify(token, process.env.JWT_SECRET);
 		console.log(sub);

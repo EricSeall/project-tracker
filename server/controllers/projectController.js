@@ -3,7 +3,10 @@ const projectModel = require("../models/projectModel");
 
 // '/' GET
 const getProjects = async (req, res) => {
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+	res.setHeader(
+		"Access-Control-Allow-Origin",
+		"https://project-tracker-client-bqe9.onrender.com"
+	);
 
 	if (!req.user) {
 		return res.status(403).json({ error: "User not logged in" });
