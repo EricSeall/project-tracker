@@ -11,6 +11,7 @@ import {
 import { parseDate } from "@internationalized/date";
 import BackIcon from "./icons/BackIcon";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { URL } from "../URL";
 
 interface Props {
 	darkMode: boolean;
@@ -34,7 +35,7 @@ export default function Create(props: Props) {
 
 		const newProject = { title, streamLink, priority, dueDate, description };
 
-		const response = await fetch("http://localhost:4000/api/projects/", {
+		const response = await fetch(`${URL}/api/projects/`, {
 			method: "POST",
 			body: JSON.stringify(newProject),
 			credentials: "include",

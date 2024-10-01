@@ -25,6 +25,7 @@ import CloseIcon from "./icons/CloseIcon";
 import { sortBy } from "lodash";
 import ProjectChecklistItem from "./ProjectChecklistItem";
 import ProjectChecklistNewItem from "./ProjectChecklistNewItem";
+import { URL } from "../URL";
 
 interface Props {
 	darkMode: boolean;
@@ -53,12 +54,9 @@ export default function ProjectDetail(props: Props) {
 	let params = useParams();
 
 	const getData = async () => {
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${params.id}`,
-			{
-				credentials: "include",
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${params.id}`, {
+			credentials: "include",
+		});
 		const data = await response.json();
 
 		if (data.error === "Cound not authenticate user") {
@@ -110,17 +108,14 @@ export default function ProjectDetail(props: Props) {
 			checklist,
 		};
 
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}`,
-			{
-				method: "PATCH",
-				body: JSON.stringify(updatedProject),
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}`, {
+			method: "PATCH",
+			body: JSON.stringify(updatedProject),
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
 		const json = await response.json();
 
@@ -146,17 +141,14 @@ export default function ProjectDetail(props: Props) {
 		};
 
 		// PATCH Request
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}`,
-			{
-				method: "PATCH",
-				body: JSON.stringify(updatedProject),
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}`, {
+			method: "PATCH",
+			body: JSON.stringify(updatedProject),
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
 		const json = await response.json();
 
@@ -192,17 +184,14 @@ export default function ProjectDetail(props: Props) {
 			checklist: list,
 		};
 
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}`,
-			{
-				method: "PATCH",
-				body: JSON.stringify(updatedProject),
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}`, {
+			method: "PATCH",
+			body: JSON.stringify(updatedProject),
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
 		const json = await response.json();
 
@@ -221,17 +210,14 @@ export default function ProjectDetail(props: Props) {
 		}
 
 		// POST Request
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}/`,
-			{
-				method: "POST",
-				body: content,
-				credentials: "include",
-				headers: {
-					"Content-Type": "text/plain",
-				},
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}/`, {
+			method: "POST",
+			body: content,
+			credentials: "include",
+			headers: {
+				"Content-Type": "text/plain",
+			},
+		});
 
 		const json = await response.json();
 
@@ -253,13 +239,10 @@ export default function ProjectDetail(props: Props) {
 
 	const handleDeleteItem = async (listID: string) => {
 		// DELETE Request
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}/${listID}`,
-			{
-				method: "DELETE",
-				credentials: "include",
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}/${listID}`, {
+			method: "DELETE",
+			credentials: "include",
+		});
 
 		const json = await response.json();
 
@@ -275,13 +258,10 @@ export default function ProjectDetail(props: Props) {
 
 	const handleDeleteProject = async () => {
 		// DELETE Request
-		const response = await fetch(
-			`http://localhost:4000/api/projects/${project?._id}`,
-			{
-				method: "DELETE",
-				credentials: "include",
-			}
-		);
+		const response = await fetch(`${URL}/api/projects/${project?._id}`, {
+			method: "DELETE",
+			credentials: "include",
+		});
 
 		const json = await response.json();
 

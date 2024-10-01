@@ -4,6 +4,7 @@ import { ListItem, Project } from "../types";
 import { waveform } from "ldrs";
 import { orderBy } from "lodash";
 import { useNavigate } from "react-router-dom";
+import { URL } from "../URL";
 
 interface Props {
 	activeSort: string;
@@ -22,7 +23,7 @@ export default function ProjectList(props: Props) {
 
 	useEffect(() => {
 		const getData = async () => {
-			const response = await fetch("http://localhost:4000/api/projects", {
+			const response = await fetch(`${URL}/api/projects`, {
 				credentials: "include",
 			});
 			const data = await response.json();
