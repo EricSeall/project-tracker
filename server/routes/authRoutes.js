@@ -16,6 +16,7 @@ router.get("/test", async (req, res) => {
 router.get("/discord/redirect", async (req, res) => {
 	const { code } = req.query;
 	res.setHeader("Access-Control-Allow-Credentials", "true");
+	res.setHeader("Access-Control-Expose-Headers", "Set-Cookie");
 
 	if (code) {
 		// use code to get token
