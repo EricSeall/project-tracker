@@ -100,11 +100,11 @@ router.get("/discord/redirect", async (req, res) => {
 			});
 		}
 
-		res.cookie("token", token, { sameSite: "none", secure: true, httpOnly });
+		res.cookie("token", token, { sameSite: "none", secure: true, httpOnly: true });
 		res.cookie("refresh_token", refresh_token, {
 			sameSite: "none",
 			secure: true,
-			httpOnly,
+			httpOnly: true,
 		});
 		res.status(200).redirect(process.env.CLIENT_REDIRECT_URL);
 		console.log(json, userData, refreshData);
