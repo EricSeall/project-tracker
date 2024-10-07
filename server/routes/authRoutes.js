@@ -100,9 +100,15 @@ router.get("/discord/redirect", async (req, res) => {
 			});
 		}
 
-		res.cookie("token", token, { sameSite: "none", secure: true, httpOnly: true });
+		res.cookie("token", token, {
+			sameSite: "none",
+			maxAge: 1000 * 60 * 60 * 24 * 90,
+			secure: true,
+			httpOnly: true,
+		});
 		res.cookie("refresh_token", refresh_token, {
 			sameSite: "none",
+			maxAge: 1000 * 60 * 60 * 24 * 90,
 			secure: true,
 			httpOnly: true,
 		});
