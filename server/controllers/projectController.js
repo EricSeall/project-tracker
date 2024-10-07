@@ -5,7 +5,7 @@ const projectModel = require("../models/projectModel");
 const getProjects = async (req, res) => {
 	res.setHeader(
 		"Access-Control-Allow-Origin",
-		"https://project-tracker-client-bqe9.onrender.com"
+		"https://tracker.aceauramusic.com"
 	);
 
 	if (!req.user) {

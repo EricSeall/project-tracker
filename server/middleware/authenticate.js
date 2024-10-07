@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
 
 	res.setHeader(
 		"Access-Control-Allow-Origin",
-		"https://project-tracker-client-bqe9.onrender.com"
+		"https://tracker.aceauramusic.com"
 	);
 	try {
 		const { sub } = await verify(token, process.env.JWT_SECRET);

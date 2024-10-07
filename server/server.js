@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 app.use(
 	cors({
-		origin: "https://project-tracker-client-bqe9.onrender.com",
+		origin: "https://tracker.aceauramusic.com",
 		credentials: true,
 	})
 );

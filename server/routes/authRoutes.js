@@ -24,8 +24,7 @@ router.get("/discord/redirect", async (req, res) => {
 			client_secret: process.env.CLIENTSECRET,
 			grant_type: "authorization_code",
 			code: code.toString(),
-			redirect_uri:
-				"https://project-tracker-server-l2fs.onrender.com/api/auth/discord/redirect",
+			redirect_uri: "https://server.aceauramusic.com/api/auth/discord/redirect",
 		});
 
 		const response = await fetch("https://discord.com/api/oauth2/token", {
