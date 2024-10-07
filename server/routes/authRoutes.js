@@ -105,14 +105,14 @@ router.get("/discord/redirect", async (req, res) => {
 			maxAge: 1000 * 60 * 60 * 24 * 90,
 			path: "/",
 			secure: true,
-			httpOnly: true,
+			httpOnly: false,
 		});
 		res.cookie("refresh_token", refresh_token, {
 			sameSite: "none",
 			maxAge: 1000 * 60 * 60 * 24 * 90,
 			path: "/",
 			secure: true,
-			httpOnly: true,
+			httpOnly: false,
 		});
 		res.status(200).redirect(process.env.CLIENT_REDIRECT_URL);
 		console.log(json, userData, refreshData);
