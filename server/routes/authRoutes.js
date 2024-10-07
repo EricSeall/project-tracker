@@ -99,8 +99,8 @@ router.get("/discord/redirect", async (req, res) => {
 			});
 		}
 
-		res.cookie("token", token);
-		res.cookie("refresh_token", refresh_token);
+		res.cookie("token", token, { sameSite: none, secure: true });
+		res.cookie("refresh_token", refresh_token, { sameSite: none, secure: true });
 		res.status(200).redirect(process.env.CLIENT_REDIRECT_URL);
 		console.log(json, userData, refreshData);
 	}
