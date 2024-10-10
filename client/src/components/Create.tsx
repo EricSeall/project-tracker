@@ -83,6 +83,8 @@ export default function Create(props: Props) {
           >
             <BackIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
           </Button>
+
+          <div className="placeholder" />
         </div>
         <form onSubmit={handleSubmit} className="text-content1 font-semibold">
           <Input
