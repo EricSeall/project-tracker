@@ -9,6 +9,8 @@ export default function PlusIcon(props: Props) {
       fill="none"
       stroke={props.color}
       xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
     >
       <g id="SVGRepo_iconCarrier">
         <path d="M12 6V18" strokeLinecap="round" strokeLinejoin="round"></path>{" "}
