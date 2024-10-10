@@ -74,7 +74,7 @@ export default function Create(props: Props) {
         darkMode={darkMode}
       />
       <div className="bg-background bg-fixed p-4 min-h-[calc(100vh-4rem)] md:w-1/2 md:min-w-96 md:mx-auto">
-        <div className="flex justify-between p-4 w-1/2 min-w-96 mx-auto">
+        <div className="p-4">
           <Button
             className="bg-transparent mb-8"
             as={RouterLink}
@@ -83,8 +83,6 @@ export default function Create(props: Props) {
           >
             <BackIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
           </Button>
-
-          <div className="placeholder" />
         </div>
         <form onSubmit={handleSubmit} className="text-content1 font-semibold">
           <Input
