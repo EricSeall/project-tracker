@@ -13,8 +13,15 @@ export default function Nav(props: Props) {
 	const { title, toggleDarkMode, darkMode } = props;
 
 	function removeCookies() {
-		Cookies.remove("token", { path: "/" });
-		Cookies.remove("refresh_token", { path: "/" });
+		if (import.meta.env.VITE_ENV == "dev") {
+			Cookies.remove("token");
+			Cookies.remove("refresh_token");
+		}
+
+		if (import.meta.env.VITE_ENV == "prod") {
+			Cookies.remove("token", { path: "/", domain: ".aceauramusic.com" });
+			Cookies.remove("refresh_token", { path: "/", domain: ".aceauramusic.com" });
+		}
 	}
 
 	function logOut() {
