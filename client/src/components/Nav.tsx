@@ -13,8 +13,8 @@ export default function Nav(props: Props) {
 	const { title, toggleDarkMode, darkMode } = props;
 
 	function logOut() {
-		Cookies.remove("token");
-		Cookies.remove("refresh_token");
+		Cookies.remove("token", { path: "/" });
+		Cookies.remove("refresh_token", { path: "/" });
 		window.location.reload();
 	}
 
