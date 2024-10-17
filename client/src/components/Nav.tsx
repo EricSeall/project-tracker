@@ -1,5 +1,4 @@
 import { Button, Navbar, NavbarContent } from "@nextui-org/react";
-import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import DarkIcon from "./icons/DarkIcon";
 import LightIcon from "./icons/LightIcon";
@@ -12,8 +11,6 @@ interface Props {
 
 export default function Nav(props: Props) {
 	const { title, toggleDarkMode, darkMode } = props;
-
-	const navigate = useNavigate();
 
 	function logOut() {
 		Cookies.remove("token");
