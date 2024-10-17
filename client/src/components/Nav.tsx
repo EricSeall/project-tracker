@@ -12,9 +12,13 @@ interface Props {
 export default function Nav(props: Props) {
 	const { title, toggleDarkMode, darkMode } = props;
 
-	function logOut() {
-		Cookies.remove("token", { path: "/" });
-		Cookies.remove("refresh_token", { path: "/" });
+	async function removeCookies() {
+		await Cookies.remove("token", { path: "/" });
+		await Cookies.remove("refresh_token", { path: "/" });
+	}
+
+	async function logOut() {
+		removeCookies();
 		window.location.reload();
 	}
 
