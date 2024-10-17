@@ -21,7 +21,7 @@ if (process.env.ENV == "dev") {
 
 if (process.env.ENV == "prod") {
 	isSecure = true;
-	domain = "tracker.aceauramusic.com";
+	domain = ".aceauramusic.com";
 	sameSite = "none";
 }
 
