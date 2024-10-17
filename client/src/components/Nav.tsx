@@ -18,7 +18,6 @@ export default function Nav(props: Props) {
 	function logOut() {
 		Cookies.remove("token");
 		Cookies.remove("refresh_token");
-		navigate("/");
 		window.location.reload();
 	}
 
