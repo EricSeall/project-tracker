@@ -9,116 +9,132 @@ const authenticate = require("../middleware/authenticate");
 
 //router.use(authenticate);
 
+let isSecure;
+let domain;
+let sameSite;
+
+if (process.env.ENV == "dev") {
+	isSecure = false;
+	domain = null;
+	sameSite = null;
+}
+
+if (process.env.ENV == "prod") {
+	isSecure = true;
+	domain = ".aceauramusic.com";
+	sameSite = "none";
+}
+
 router.get("/test", async (req, res) => {
-  res.status(200).send("test");
+	res.status(200).send("test");
 });
 
 router.get("/discord/redirect", async (req, res) => {
-  const { code } = req.query;
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Expose-Headers", "Set-Cookie");
+	const { code } = req.query;
+	res.setHeader("Access-Control-Allow-Credentials", "true");
+	res.setHeader("Access-Control-Expose-Headers", "Set-Cookie");
 
-  if (code) {
-    // use code to get token
-    const formData = new URLSearchParams({
-      client_id: process.env.CLIENTID,
-      client_secret: process.env.CLIENTSECRET,
-      grant_type: "authorization_code",
-      code: code.toString(),
-      redirect_uri: "https://server.aceauramusic.com/api/auth/discord/redirect",
-    });
+	if (code) {
+		// use code to get token
+		const formData = new URLSearchParams({
+			client_id: process.env.CLIENTID,
+			client_secret: process.env.CLIENTSECRET,
+			grant_type: "authorization_code",
+			code: code.toString(),
+			redirect_uri: `${process.env.SERVER_URL}/api/auth/discord/redirect`,
+		});
 
-    const response = await fetch("https://discord.com/api/oauth2/token", {
-      method: "POST",
-      body: formData,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
+		const response = await fetch("https://discord.com/api/oauth2/token", {
+			method: "POST",
+			body: formData,
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+		});
 
-    const json = await response.json();
+		const json = await response.json();
 
-    const access = json.access_token;
+		const access = json.access_token;
 
-    // use token to get user data
-    const userInfo = await fetch("https://discord.com/api/users/@me", {
-      headers: {
-        Authorization: `Bearer ${access}`,
-      },
-    });
+		// use token to get user data
+		const userInfo = await fetch("https://discord.com/api/users/@me", {
+			headers: {
+				Authorization: `Bearer ${access}`,
+			},
+		});
 
-    const userData = await userInfo.json();
+		const userData = await userInfo.json();
 
-    const { id, avatar, username, email, global_name } = userData;
+		const { id, avatar, username, email, global_name } = userData;
 
-    // refresh token
-    const refreshFormData = new URLSearchParams({
-      client_id: process.env.CLIENTID,
-      client_secret: process.env.CLIENTSECRET,
-      grant_type: "refresh_token",
-      refresh_token: json.refresh_token,
-    });
+		// refresh token
+		const refreshFormData = new URLSearchParams({
+			client_id: process.env.CLIENTID,
+			client_secret: process.env.CLIENTSECRET,
+			grant_type: "refresh_token",
+			refresh_token: json.refresh_token,
+		});
 
-    const refresh = await fetch("https://discord.com/api/oauth2/token", {
-      method: "POST",
-      body: refreshFormData,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
+		const refresh = await fetch("https://discord.com/api/oauth2/token", {
+			method: "POST",
+			body: refreshFormData,
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+		});
 
-    const refreshData = await refresh.json();
+		const refreshData = await refresh.json();
 
-    // save all data in database here
-    const user = await userModel.findOne({ discordId: id });
+		// save all data in database here
+		const user = await userModel.findOne({ discordId: id });
 
-    // give browser JWT token
-    const token = await sign({ sub: id }, process.env.JWT_SECRET, {
-      expiresIn: "90m",
-    });
-    const refresh_token = await sign({ sub: id }, process.env.JWT_SECRET);
+		// give browser JWT token
+		const token = await sign({ sub: id }, process.env.JWT_SECRET, {
+			expiresIn: "90m",
+		});
+		const refresh_token = await sign({ sub: id }, process.env.JWT_SECRET);
 
-    if (user) {
-      await userModel.updateOne(
-        { discordId: id },
-        {
-          avatar: avatar,
-          username: username,
-          email: email,
-          globalName: global_name,
-          refresh_token: refresh_token,
-        }
-      );
-    } else {
-      await userModel.create({
-        discordId: id,
-        avatar: avatar,
-        username: username,
-        email: email,
-        globalName: global_name,
-        refresh_token: refresh_token,
-      });
-    }
+		if (user) {
+			await userModel.updateOne(
+				{ discordId: id },
+				{
+					avatar: avatar,
+					username: username,
+					email: email,
+					globalName: global_name,
+					refresh_token: refresh_token,
+				}
+			);
+		} else {
+			await userModel.create({
+				discordId: id,
+				avatar: avatar,
+				username: username,
+				email: email,
+				globalName: global_name,
+				refresh_token: refresh_token,
+			});
+		}
 
-    res.cookie("token", token, {
-      sameSite: "none",
-      maxAge: 1000 * 60 * 60 * 24 * 90,
-      path: "/",
-      secure: true,
-      httpOnly: false,
-      domain: ".aceauramusic.com",
-    });
-    res.cookie("refresh_token", refresh_token, {
-      sameSite: "none",
-      maxAge: 1000 * 60 * 60 * 24 * 90,
-      path: "/",
-      secure: true,
-      httpOnly: false,
-      domain: ".aceauramusic.com",
-    });
-    res.status(200).redirect(process.env.CLIENT_REDIRECT_URL);
-    console.log(json, userData, refreshData);
-  }
+		res.cookie("token", token, {
+			sameSite: sameSite,
+			maxAge: 1000 * 60 * 60 * 24 * 90,
+			path: "/",
+			secure: isSecure,
+			httpOnly: false,
+			domain: domain,
+		});
+		res.cookie("refresh_token", refresh_token, {
+			sameSite: sameSite,
+			maxAge: 1000 * 60 * 60 * 24 * 90,
+			path: "/",
+			secure: isSecure,
+			httpOnly: false,
+			domain: domain,
+		});
+		res.status(200).redirect(process.env.CLIENT_REDIRECT_URL);
+		console.log(json, userData, refreshData);
+	}
 });
 
 module.exports = router;

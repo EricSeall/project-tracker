@@ -1,12 +1,11 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 const projectModel = require("../models/projectModel");
 
 // '/' GET
 const getProjects = async (req, res) => {
-	res.setHeader(
-		"Access-Control-Allow-Origin",
-		"https://tracker.aceauramusic.com"
-	);
+	res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_URL);
 
 	if (!req.user) {
 		return res.status(403).json({ error: "User not logged in" });

@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { verify, sign } = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const userModel = require("../models/userModel");
@@ -6,10 +8,7 @@ module.exports = async (req, res, next) => {
 	const token = req.cookies.token;
 	const refresh_token = req.cookies.refresh_token;
 
-	res.setHeader(
-		"Access-Control-Allow-Origin",
-		"https://tracker.aceauramusic.com"
-	);
+	res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_URL);
 	try {
 		const { sub } = await verify(token, process.env.JWT_SECRET);
 		console.log(sub);
