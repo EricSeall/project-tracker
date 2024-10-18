@@ -32,6 +32,7 @@ On this page the user can also edit any of the data pertaining to the project ca
 
 Project Tracker utilizes the MERN (MongoDB, Express.js, React, Node.js) stack for its core functionality. Other tools utilized include:
 - [React Router](https://reactrouter.com/en/main) - Client-side routing for React applications
+- [Tailwind CSS](https://v2.tailwindcss.com/) - CSS framework
 - [Discord Oauth2](https://discord.com/developers/docs/topics/oauth2) - Utilized to authenticate and authorize users
 - [NextUI](https://nextui.org/) - Tailwind-based component library
 - [LDRS](https://uiball.com/ldrs/) - Simple css loading animation
