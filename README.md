@@ -5,14 +5,14 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 
 ## Features
 
-### Project
+### Project Page
 
 The "Project" is the main building-block of the application. Users can create Project cards in order to store useful information about tracks they're working on such as:
-- **Project Name** - The name of the work-in-progress.
-- **Streaming Link** - An optional link to a streamable version of the track for quick and easy access. Adds a button to the top left of the card when entered.
-- **Priority Level** - How important the track is to finish.
-- **Due Date** - An optional date that the track needs to be completed by.
-- **Description** - Any additional notes about the track that you'd like to remember.
+- **Project Name** - The name of the work-in-progress
+- **Streaming Link** - An optional link to a streamable version of the track for quick and easy access. Adds a button to the top left of the card when entered
+- **Priority Level** - How important the track is to finish
+- **Due Date** - An optional date that the track needs to be completed by
+- **Description** - Any additional notes about the track that you'd like to remember
 
 The user can sort their Project cards in either ascending or descending order based upon a number of traits including:
 - Date Updated
@@ -22,5 +22,19 @@ The user can sort their Project cards in either ascending or descending order ba
 - Due Date
 - Completion % (How many to-do items completed out of total items)
 
-### To-Do List
-- Each Project card when pressed will lead to a detailed view where a user can add to a list of items to complete for the track. This is an easy way for the user to take notes on what they would like to change or add to the track for their next production session.
+### Detail Page
+
+Each Project card when pressed will lead to a detailed view where a user can add to a list of items to complete for the track. This is an easy way for the user to take notes on what they would like to change or add to the track for their next production session.
+
+On this page the user can also edit any of the data pertaining to the project card or delete the card entirely from the database.
+
+## Tech Stack
+
+Project Tracker utilizes the MERN (MongoDB, Express.js, React, Node.js) stack for its core functionality. Other tools utilized include:
+- [React Router](https://reactrouter.com/en/main) - Client-side routing for React applications
+- [Discord Oauth2](https://discord.com/developers/docs/topics/oauth2) - Utilized to authenticate and authorize users
+- [NextUI](https://nextui.org/) - Tailwind-based component library
+- [LDRS](https://uiball.com/ldrs/) - Simple css loading animation
+- [Font Awesome](https://fontawesome.com/) - SVG Icons
+- [Mongoose](https://mongoosejs.com/) - Object modeling for MongoDB
+- [Render.com](https://render.com/) - Deployment of client and server
