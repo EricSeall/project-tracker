@@ -52,17 +52,17 @@ Due to limitations with the tier of Render.com I an using to deploy the applicat
 ### Running The Program (all instructions are relative to the root directory)
 
 Install client dependencies:
-> `cd client`
+> `cd client` <br>
 > `npm install`
 
 Run Client:
-> `cd client`
+> `cd client` <br>
 > `npm run dev`
 
 Install server dependencies:
-> `cd server`
+> `cd server` <br>
 > `npm install`
 
 Run Server:
-> `cd server`
+> `cd server` <br>
 > `nodemon server`
