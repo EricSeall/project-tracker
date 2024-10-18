@@ -41,3 +41,28 @@ Project Tracker utilizes the MERN (MongoDB, Express.js, React, Node.js) stack fo
 - [Render.com](https://render.com/) - Deployment of client and server
 
 Due to limitations with the tier of Render.com I an using to deploy the application, requests can take up to 50 seconds while the server is spinning up 🙃
+
+## Development
+
+### Dependencies
+
+- Node.js
+- NPM
+
+### Running The Program (all instructions are relative to the root directory)
+
+Install client dependencies:
+  `cd client`
+  `npm install`
+
+Run Client:
+  `cd client`
+  `npm run dev`
+
+Install server dependencies:
+  `cd server`
+  `npm install`
+
+Run Server:
+  `cd server`
+  `nodemon server`
