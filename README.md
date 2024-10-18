@@ -38,3 +38,5 @@ Project Tracker utilizes the MERN (MongoDB, Express.js, React, Node.js) stack fo
 - [Font Awesome](https://fontawesome.com/) - SVG Icons
 - [Mongoose](https://mongoosejs.com/) - Object modeling for MongoDB
 - [Render.com](https://render.com/) - Deployment of client and server
+
+Due to limitations with the tier of Render.com I an using to deploy the application, requests can take up to 50 seconds while the server is spinning up 🙃
