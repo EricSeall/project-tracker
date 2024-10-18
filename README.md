@@ -14,5 +14,13 @@ The "Project" is the main building-block of the application. Users can create Pr
 - **Due Date** - An optional date that the track needs to be completed by.
 - **Description** - Any additional notes about the track that you'd like to remember.
 
+The user can sort their Project cards in either ascending or descending order based upon a number of traits including:
+- Date Updated
+- Date Created
+- Title
+- Priority
+- Due Date
+- Completion % (How many to-do items completed out of total items)
+
 ### To-Do List
 - Each Project card when pressed will lead to a detailed view where a user can add to a list of items to complete for the track. This is an easy way for the user to take notes on what they would like to change or add to the track for their next production session.
