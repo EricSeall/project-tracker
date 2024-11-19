@@ -278,13 +278,20 @@ export default function ProjectDetail(props: Props) {
 
 			<div className="bg-background bg-fixed p-4 min-h-[calc(100vh-4rem)] md:w-1/2 md:min-w-96 md:mx-auto">
 				<div className="flex justify-between">
-					<Button className="bg-transparent" as={RouterLink} to="/projects" isIconOnly>
+					<Button
+						className="bg-transparent"
+						as={RouterLink}
+						to="/projects"
+						isIconOnly
+						aria-label="All projects"
+					>
 						<BackIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 					</Button>
 					<Button
 						className="bg-transparent"
 						onPress={() => setEditMode(!editMode)}
 						isIconOnly
+						aria-label="Toggle edit mode"
 					>
 						{editMode ? (
 							<CloseIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
@@ -382,6 +389,7 @@ export default function ProjectDetail(props: Props) {
 											type="submit"
 											variant="flat"
 											className="bg-transparent border border-content1 font-semibold"
+											aria-label="Update project"
 										>
 											Update Project
 										</Button>
@@ -390,6 +398,7 @@ export default function ProjectDetail(props: Props) {
 											variant="flat"
 											className="bg-transparent border border-danger font-semibold"
 											onPress={onOpen}
+											aria-label="Delete project"
 										>
 											Delete Project
 										</Button>

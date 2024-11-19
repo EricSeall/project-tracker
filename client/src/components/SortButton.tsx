@@ -34,6 +34,7 @@ export default function SortButton(props: Props) {
 						<ArrowDescendingIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 					)
 				}
+				aria-label="Change sort order"
 			>
 				{activeSort}
 			</Button>
@@ -42,7 +43,11 @@ export default function SortButton(props: Props) {
 				classNames={{ content: "bg-background dark:bg-background" }}
 			>
 				<DropdownTrigger>
-					<Button isIconOnly className="bg-transparent border border-content1">
+					<Button
+						isIconOnly
+						className="bg-transparent border border-content1"
+						aria-label="Open sorting options"
+					>
 						<DownIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 					</Button>
 				</DropdownTrigger>

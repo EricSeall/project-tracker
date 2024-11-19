@@ -23,6 +23,7 @@ export default function ProjectChecklistItem(props: Props) {
 						wrapper:
 							"text-content1 group-data-[selected=true]:after:bg-foreground before:border-content1",
 					}}
+					aria-label="List item checkbox"
 					size="lg"
 					defaultSelected={item.isCompleted}
 					onValueChange={() => handleCheck(item._id)}
@@ -38,6 +39,7 @@ export default function ProjectChecklistItem(props: Props) {
 					onBlur={(e) => {
 						handleEditItem(e.currentTarget, item._id, e.currentTarget.value);
 					}}
+					aria-label="List item text content"
 				/>
 			</div>
 			<Button
@@ -45,6 +47,7 @@ export default function ProjectChecklistItem(props: Props) {
 				size="sm"
 				onPress={() => handleDeleteItem(item._id)}
 				isIconOnly
+				aria-label="Delete checklist item"
 			>
 				<DeleteIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 			</Button>

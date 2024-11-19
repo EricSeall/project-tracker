@@ -36,7 +36,12 @@ export default function Nav(props: Props) {
 					<h1 className="text-2xl font-bold">{title}</h1>
 				</NavbarContent>
 				<NavbarContent justify="center">
-					<Button isIconOnly className="bg-transparent" onClick={() => toggleDarkMode()}>
+					<Button
+						isIconOnly
+						className="bg-transparent"
+						aria-label="Change color mode"
+						onClick={() => toggleDarkMode()}
+					>
 						{darkMode ? <LightIcon /> : <DarkIcon />}
 					</Button>
 					<a className="font-semibold cursor-pointer" onClick={logOut}>

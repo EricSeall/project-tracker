@@ -76,6 +76,7 @@ export default function Create(props: Props) {
 						as={RouterLink}
 						to="/projects"
 						isIconOnly
+						aria-label="All projects"
 					>
 						<BackIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 					</Button>
@@ -146,6 +147,7 @@ export default function Create(props: Props) {
 						type="submit"
 						variant="flat"
 						className="bg-transparent border border-content1 font-semibold"
+						aria-label="Create project"
 					>
 						Create Project
 					</Button>

@@ -70,7 +70,12 @@ export default function ProjectCard(props: Props) {
 				<div className="w-fit">
 					{streamLink && (
 						<form target="_blank" action={streamLink}>
-							<Button className="bg-transparent" type="submit" isIconOnly>
+							<Button
+								className="bg-transparent"
+								type="submit"
+								isIconOnly
+								aria-label="Stream track"
+							>
 								<PlayIcon color={darkMode ? "#d8dbe2" : "#0e0920"} />
 							</Button>
 						</form>
