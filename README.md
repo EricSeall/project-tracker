@@ -29,7 +29,7 @@ The user can sort their Project cards in either ascending or descending order ba
 
 ### Detail Page
 
-Each Project card when pressed will lead to a detailed view where a user can add to a list of items to complete for the track. This is an easy way for the user to take notes on what they would like to change or add to the track for their next production session.
+Each Project card when pressed will lead to a detailed view where a user can add to a list of items to complete for the track. This is an easy way for the user to take notes on what they would like to change or add to the track for their next production session. These notes can be checked off when completed or deleted if they are no longer applicable to the project.
 
 On this page the user can also edit any of the data pertaining to the project card or delete the card entirely from the database.
 <br>
