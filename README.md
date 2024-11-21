@@ -6,7 +6,7 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 ## Features
 
 
-<img align="right" width="200" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
+<img align="right" width="33%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
 
 ### Project Page
 
@@ -24,6 +24,8 @@ The user can sort their Project cards in either ascending or descending order ba
 - Priority
 - Due Date
 - Completion % (How many to-do items completed out of total items)
+
+<img align="left" width="33%" src="https://github.com/user-attachments/assets/ef32979b-723a-4ba6-872f-dfae473bb9bd" />
 
 ### Detail Page
 
