@@ -6,7 +6,7 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 ## Features
 
 
-<img align="right" width="25%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
+<img align="right" width="20%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
 
 ### Project Page
 
@@ -25,7 +25,7 @@ The user can sort their Project cards in either ascending or descending order ba
 - Due Date
 - Completion % (How many to-do items completed out of total items)
 
-<img align="right" width="25%" src="https://github.com/user-attachments/assets/ef32979b-723a-4ba6-872f-dfae473bb9bd" />
+<img align="right" width="20%" src="https://github.com/user-attachments/assets/ef32979b-723a-4ba6-872f-dfae473bb9bd" />
 
 ### Detail Page
 
@@ -44,8 +44,6 @@ Project Tracker utilizes the MERN (MongoDB, Express.js, React, Node.js) stack fo
 - [Font Awesome](https://fontawesome.com/) - SVG Icons
 - [Mongoose](https://mongoosejs.com/) - Object modeling for MongoDB
 - [Render.com](https://render.com/) - Deployment of client and server
-
-Due to limitations with the tier of Render.com I an using to deploy the application, requests can take up to 50 seconds while the server is spinning up 🙃
 
 ## Development
 
