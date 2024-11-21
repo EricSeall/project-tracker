@@ -5,9 +5,8 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 
 ## Features
 
-<kbd align="right" width="20%">
-<img width="100%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
-</kbd>
+<img align="right" width="20%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
+
 ### Project Page
 
 The "Project" is the main building-block of the application. Users can create Project cards in order to store useful information about tracks they're working on such as:
@@ -25,9 +24,7 @@ The user can sort their Project cards in either ascending or descending order ba
 - Due Date
 - Completion % (How many to-do items completed out of total items)
 
-<kbd>
-  <img align="right" width="20%" src="https://github.com/user-attachments/assets/ef32979b-723a-4ba6-872f-dfae473bb9bd" />
-</kbd>
+<img align="right" width="20%" src="https://github.com/user-attachments/assets/ef32979b-723a-4ba6-872f-dfae473bb9bd" />
 
 ### Detail Page
 
