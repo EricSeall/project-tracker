@@ -35,6 +35,12 @@ On this page the user can also edit any of the data pertaining to the project ca
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Tech Stack
 
