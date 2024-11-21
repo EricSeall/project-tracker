@@ -5,6 +5,9 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 
 ## Features
 
+
+<img align="right" width="200" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
+
 ### Project Page
 
 The "Project" is the main building-block of the application. Users can create Project cards in order to store useful information about tracks they're working on such as:
