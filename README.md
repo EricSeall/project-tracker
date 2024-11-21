@@ -5,8 +5,8 @@ The application is live [here](https://tracker.aceauramusic.com) for anyone to u
 
 ## Features
 
-<kbd>
-<img align="right" width="20%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
+<kbd align="right" width="20%">
+<img width="100%" src="https://github.com/user-attachments/assets/8d5a2f38-232d-4540-9571-ca8c904912fd" />
 </kbd>
 ### Project Page
 
